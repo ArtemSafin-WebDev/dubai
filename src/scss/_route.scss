@@ -1,0 +1,170 @@
+.route {
+    padding-top: 10rem;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-top: 5rem;
+    }
+}
+
+.route__shape {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: auto;
+    pointer-events: none;
+}
+
+.route__heading-wrapper {
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 4rem;
+    }
+}
+
+.route__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 7.2rem;
+    line-height: 1;
+    font-family: var(--yanone);
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.route__heading-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    max-width: 44rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+}
+
+.route__content {
+    @include breakpointMF(small-tablet) {
+        background-image: url('../img/abstraction.svg'), url('../img/tower.svg');
+        background-position: left top, right 5.4rem bottom -1rem;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 35rem auto, 32rem auto;
+    }
+
+    @include breakpoint(mobile) {
+        padding-bottom: 31.5rem;
+        background-image: url('../img/tower.svg');
+        background-repeat: no-repeat;
+        background-position: center bottom -1rem;
+        background-size: 21rem auto;
+    }
+}
+
+.route__inner-wrapper {
+    max-width: 52.8rem;
+    margin: 0 auto;
+    padding-bottom: 16rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.route__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 6rem;
+    margin-bottom: 8rem;
+
+    @include breakpoint(mobile) {
+        grid-gap: 3rem;
+        margin-bottom: 6rem;
+    }
+}
+
+.route__card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.2rem;
+    line-height: 1;
+    font-family: var(--yanone);
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+}
+
+.route__card-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+}
+
+.route__link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    color: #edeef5;
+    padding: 1.6rem 3.2rem;
+    background: var(--primary-color);
+    box-shadow: 0px 1rem 16rem rgba(241, 101, 48, 0.8);
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    align-self: flex-start;
+    white-space: nowrap;
+
+    transition: background-color 0.2s;
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--primary-color-hover);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        align-self: center;
+    }
+    &:link,
+    &:visited {
+        color: #edeef5;
+    }
+}

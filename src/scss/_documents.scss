@@ -1,0 +1,105 @@
+.documents {
+    padding-bottom: 15rem;
+    padding-top: 6rem;
+    background: linear-gradient(360deg, #f7f7f7 1.87%, rgba(247, 247, 247, 0) 88.81%);
+
+    position: relative;
+
+    @include breakpoint(mobile) {
+        padding-top: 4.3rem;
+        padding-bottom: 13rem;
+        background: linear-gradient(360deg, #f7f7f7 1.87%, rgba(247, 247, 247, 0) 88.81%);
+    }
+}
+
+.documents__shape {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    height: auto;
+    pointer-events: none;
+}
+
+.documents__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5.6rem;
+    line-height: 1;
+    font-family: var(--yanone);
+    margin-bottom: 7.4rem;
+    position: relative;
+    z-index: 40;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 1;
+        margin-bottom: 4rem;
+    }
+}
+
+.documents__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    column-count: 2;
+    column-gap: 6rem;
+    margin-bottom: 5.4rem;
+
+    @include breakpoint(mobile) {
+        column-count: 1;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
+    p {
+        break-inside: avoid;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 3rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.documents__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--primary-color);
+    box-shadow: 0px 1rem 16rem rgba(241, 101, 48, 0.8);
+    border-radius: 1rem;
+    color: #edeef5;
+    padding: 1.6rem 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    transition: background-color 0.2s;
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--primary-color-hover);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        padding: 1.6rem 3.2rem;
+        box-shadow: 0px 1rem 11rem rgba(241, 101, 48, 0.8);
+    }
+    &:link,
+    &:visited {
+        color: #edeef5;
+    }
+}

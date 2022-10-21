@@ -1,0 +1,36 @@
+<div class="modal js-modal" id="callback">
+
+    <div class="modal__inner">
+        <button class="modal__close js-close-modal" type="button">
+            <svg width="45" height="45" aria-hidden="true" class="icon-cross">
+                <use xlink:href="#cross"></use>
+            </svg>
+        </button>
+
+        <div class="modal__content">
+            <h3 class="modal__heading">
+                Записаться на консультацию
+            </h3>
+            <form action="/" method="POST" class="modal__form" data-need-validation="">
+                <div class="modal__form-fields">
+                    <div class="modal__form-field">
+                        <label for="modal-name" class="modal__form-label">Имя</label>
+                        <input type="text" name="name" class="modal__form-input" required="" id="modal-name">
+                    </div>
+                    <div class="modal__form-field">
+                        <label for="modal-phone" class="modal__form-label">Телефон</label>
+                        <input type="tel" name="phone" class="modal__form-input js-phone-input" required=""
+                            id="modal-phone" data-parsley-phone="">
+                    </div>
+                </div>
+                <button class="modal__form-submit" type="submit">
+                    Записаться на консультацию
+                </button>
+            </form>
+        </div>
+        <div class="modal__image-wrapper">
+            <img src="img/modal-image.jpg" alt="" class="modal__image">
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,217 @@
+.about {
+    margin-bottom: 14rem;
+
+    color: #edeef5;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 5.4rem;
+
+        margin-top: -2rem;
+    }
+}
+
+.about__content {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    @include breakpoint(mobile) {
+        position: relative;
+        z-index: 1;
+        padding-bottom: 6rem;
+        padding-top: 13.4rem;
+    }
+}
+
+.about__bg {
+    background-color: var(--primary-color);
+    position: relative;
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        clip-path: polygon(0 7rem, 100% 0, 100% 100%, 0 100%);
+    }
+
+    @include breakpoint(mobile) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(41, 32, 77, 0.8);
+            backdrop-filter: blur(2px);
+            height: 40%;
+        }
+    }
+}
+
+.about__bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__bg-shape {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60rem;
+    height: auto;
+
+    @include breakpoint(mobile) {
+        width: 16.7rem;
+        height: auto;
+        top: -5.5rem;
+        z-index: 5;
+    }
+}
+
+.about__info {
+    @include breakpointMF(small-tablet) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 92rem;
+        padding: 27rem 0;
+        padding-bottom: 35rem;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 11rem;
+    }
+}
+
+.about__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10rem;
+    line-height: 1;
+    margin-bottom: 4rem;
+    font-family: var(--yanone);
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 5.4rem;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
+}
+
+.about__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    margin-bottom: 4rem;
+    max-width: 29rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.about__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.6rem 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    align-self: flex-start;
+    color: #311c49;
+    background: #edeef5;
+    border-radius: 0.4rem;
+    transition: opacity 0.2s;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.95;
+        }
+    }
+    @include breakpoint(mobile) {
+        padding: 1.6rem 3.2rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+    }
+
+    &:link,
+    &:visited {
+        color: #311c49;
+    }
+}
+
+.about__features {
+    @include breakpointMF(small-tablet) {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        align-self: flex-end;
+        background: rgba(41, 32, 77, 0.8);
+        backdrop-filter: blur(2px);
+        padding: 6rem 0;
+        min-height: 27rem;
+    }
+}
+
+.about__features-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 4rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 3.5rem;
+    }
+}
+
+.about__features-list-item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+    &::before {
+        content: '';
+        display: block;
+        width: 6rem;
+        height: 0.4rem;
+        background: #edeef5;
+        margin-bottom: 2rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 1rem;
+        }
+    }
+}

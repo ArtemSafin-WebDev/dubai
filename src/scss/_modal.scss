@@ -1,0 +1,200 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(#282d3a, 0.7);
+    z-index: 200;
+    padding: var(--content-padding);
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+    @include breakpoint(mobile) {
+        padding: 1rem;
+    }
+
+    .no-touch & {
+        @include customScrollbar();
+    }
+
+    &:not(.active) {
+        right: calc(-1 * var(--sb-width, 0));
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.4s, visibility 0.4s;
+    }
+}
+
+.modal__inner {
+    width: 100%;
+    margin: auto;
+    max-width: 96rem;
+    background: #ffffff;
+    border-radius: 1.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: relative;
+    color: #000000;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.modal__close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    z-index: 10;
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: #d9d9d9;
+        transition: fill 0.2s;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            svg {
+                fill: var(--primary-color);
+            }
+        }
+    }
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem;
+    padding-bottom: 8rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.modal__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5.6rem;
+    line-height: 1;
+    text-align: center;
+    font-family: var(--yanone);
+    margin-bottom: 8.5rem;
+    margin-top: 4rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 4rem;
+        max-width: none;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.modal__form-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    font-family: 'Inter', sans-serif;
+    padding-left: 2rem;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.modal__form-input {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 1rem;
+    height: 6.4rem;
+    padding: 0 2rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.modal__form-submit {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: #fdf1ed;
+    padding: 2.1rem 5rem;
+    background: var(--primary-color);
+    align-self: flex-start;
+    box-shadow: 0px 1rem 4rem rgba(241, 101, 48, 0.8);
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.2s;
+    font-family: 'Inter', sans-serif;
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--primary-color-hover);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        align-self: stretch;
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    &:link,
+    &:visited {
+        color: #fdf1ed;
+    }
+}
+
+.modal__image-wrapper {
+    position: relative;
+}
+
+.modal__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

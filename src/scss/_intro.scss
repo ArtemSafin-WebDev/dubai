@@ -1,0 +1,190 @@
+.intro {
+    margin-bottom: 16rem;
+    padding-top: 7rem;
+    position: relative;
+    z-index: 1;
+    background-image: url('../img/intro-bg.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 6rem;
+        padding-top: 0;
+        background-image: url('../img/intro-mobile-shape.svg'), url('../img/intro-bg-mobile.svg'),
+            linear-gradient(to bottom, #ede9e5 0%, #ede9e5 8rem, transparent 8rem, transparent 100%);
+        background-position: left top, center top 8rem, center top;
+        background-size: 33rem auto, 100% auto, 100% 100%;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        padding-bottom: 8rem;
+    }
+}
+
+.intro__shape {
+    position: absolute;
+    left: 0;
+    top: calc(-1 * var(--header-height, 0));
+    height: auto;
+    width: 30.8rem;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.intro__row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: stretch;
+    }
+}
+
+.intro__text-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    flex-grow: 1;
+    margin-bottom: 12rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        margin: 0;
+        align-items: center;
+    }
+}
+
+.intro__main-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5.6rem;
+    line-height: 5.6rem;
+    font-family: var(--yanone);
+    margin-bottom: 3.2rem;
+    max-width: 52rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 3.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    em {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        font-style: normal;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+            left: -1.2rem;
+            right: -1.2rem;
+            bottom: 0;
+            background: var(--primary-color);
+            height: 2rem;
+            transform: skewX(-10deg);
+
+            @include breakpoint(mobile) {
+                height: 1rem;
+                left: -0.6rem;
+                right: -0.6rem;
+            }
+        }
+    }
+}
+
+.intro__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-bottom: 6.4rem;
+    max-width: 44rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+}
+
+.intro__btn {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    color: #edeef5;
+    padding: 1.6rem 3.2rem;
+    align-self: flex-start;
+    background: var(--primary-color);
+    box-shadow: 0px 0px 1rem rgba(255, 255, 255, 0.4), 0px 1rem 16rem rgba(241, 101, 48, 0.8);
+    border-radius: 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.2s;
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--primary-color-hover);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        align-self: center;
+    }
+    &:link,
+    &:visited {
+        color: #edeef5;
+    }
+}
+
+.intro__image-wrapper {
+    width: 45rem;
+    height: 70rem;
+    flex-shrink: 0;
+    background: #ffceab;
+    border-radius: 30rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(black, 0.2);
+    margin-right: -8rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        width: 24rem;
+        height: 26rem;
+        border-radius: 0;
+        border-bottom-left-radius: 20rem;
+        border-bottom-right-radius: 20rem;
+        order: -1;
+        margin-right: auto;
+        margin-left: auto;
+        box-shadow: 0 1rem 3rem rgba(black, 0.4);
+    }
+}
+
+.intro__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    mix-blend-mode: hard-light;
+}

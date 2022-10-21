@@ -1,0 +1,170 @@
+.consultation {
+    background: #f6e8e3;
+    padding-top: 12rem;
+    padding-bottom: 14rem;
+
+    @include breakpointMF(small-tablet) {
+        background-image: url('../img/consultation-shape.svg');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: 65% center;
+    }
+
+    @include breakpoint(mobile) {
+        padding-top: 6rem;
+        padding-bottom: 10rem;
+        background-image: url('../img/consultation-shape-mobile.svg');
+        background-position: right top 6rem;
+        background-repeat: no-repeat;
+        background-size: 14rem auto;
+    }
+}
+
+.consulation__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 7rem;
+    }
+}
+
+.consultation__text-content {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.consultation__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5.6rem;
+    line-height: 1;
+    font-family: var(--yanone);
+    max-width: 43rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 4rem;
+        max-width: none;
+    }
+    em {
+        color: #f16530;
+        font-style: normal;
+    }
+}
+
+.consultation__form {
+    width: 36rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: auto;
+        flex-shrink: 1;
+    }
+}
+
+.consultation__form-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 5.6rem;
+    line-height: 1;
+    margin-bottom: 4rem;
+    font-family: var(--yanone);
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 1;
+        margin-bottom: 2rem;
+    }
+}
+
+.consultation__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        gap: 3rem;
+        margin: 0 -1.8rem;
+        margin-bottom: 4rem;
+    }
+}
+
+.consultation__form-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    font-family: 'Inter', sans-serif;
+    padding-left: 2rem;
+    margin-bottom: 0.6rem;
+    display: block;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+    }
+}
+
+.consultation__form-input {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 1rem;
+    height: 6.4rem;
+    padding: 0 2rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.consultation__form-submit {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: #fdf1ed;
+    padding: 2.1rem 5rem;
+    background: var(--primary-color);
+    align-self: flex-start;
+    box-shadow: 0px 1rem 4rem rgba(241, 101, 48, 0.8);
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--primary-color-hover);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        align-self: stretch;
+        margin: 0 -1.8rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    &:link,
+    &:visited {
+        color: #fdf1ed;
+    }
+}
