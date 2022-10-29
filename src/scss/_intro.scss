@@ -11,12 +11,11 @@
     @include breakpoint(mobile) {
         margin-bottom: 6rem;
         padding-top: 0;
-        background-image: url('../img/intro-mobile-shape.svg'), url('../img/intro-bg-mobile.svg'),
-            linear-gradient(to bottom, #ede9e5 0%, #ede9e5 8rem, transparent 8rem, transparent 100%);
-        background-position: left top, center top 8rem, center top;
-        background-size: 33rem auto, 100% auto, 100% 100%;
-        background-repeat: no-repeat, no-repeat, no-repeat;
-        padding-bottom: 8rem;
+        background-image: url('../img/intro-mobile-shape.svg'), url('../img/intro-bg-mobile.svg');
+        background-position: left top, center top;
+        background-size: 33rem auto, 100% 100%;
+        background-repeat: no-repeat, no-repeat;
+        padding-bottom: 9rem;
     }
 }
 
