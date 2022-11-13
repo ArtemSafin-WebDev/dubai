@@ -183,25 +183,32 @@
     }
 }
 
-.services__guarantees-list {
-    column-count: 2;
-    column-gap: 6rem;
+.services__guarantees-row {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 6rem;
+    }
 
     @include breakpoint(mobile) {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        grid-gap: 2rem;
+        flex-direction: column;
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.services__guarantees-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include breakpoint(mobile) {
+        gap: 2rem;
         margin: 0 -2.8rem;
     }
 }
 
 .services__guarantees-list-item {
-    break-inside: avoid;
-    margin-bottom: 4rem;
-
-    @include breakpoint(mobile) {
-        margin: 0;
-    }
 }
 
 .services__guarantees-card {
